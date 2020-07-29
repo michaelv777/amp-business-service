@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>amp.business.bean</groupId>
+  <artifactId>amp-business-service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>ejb</packaging>
+  <name>amp-business-bean</name>
+  
+  <parent>
+  	<groupId>amp.framework</groupId>
+  	<artifactId>amp-framework</artifactId>
+  	<version>1.0-SNAPSHOT</version>
+  </parent>
+  
+  <repositories>
+      <repository>
+          <id>jboss-repo</id>
+          <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      </repository>
+  </repositories>
+
+  <build>
+    <finalName>amp-business-bean</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-jar-plugin</artifactId>
+	    <version>2.3.2</version>
+	    <configuration>
+	              
+	        <fileNameMapping>@{artifactId}@</fileNameMapping>             
+	    </configuration>
+	  </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version><!--$NO-MVN-MAN-VER$-->
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <ejbVersion>3.1</ejbVersion>
+          
+          <fileNameMapping>@{artifactId}@</fileNameMapping>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  
+  	<dependency>
+      <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.12</version>
+    </dependency>
+    
+  	<dependency>
+  		<groupId>log4j</groupId>
+  		<artifactId>log4j</artifactId>
+  		<version>1.2.12</version>
+  	</dependency>
+
+  	<dependency>
+    	<groupId>amp.jpa.entities</groupId>
+    	<artifactId>amp-jpa-entities</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  	
+  	<dependency>
+    	<groupId>amp.common.api</groupId>
+  		<artifactId>amp-common-api</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>amp.data.handler</groupId>
+  		<artifactId>amp-data-handler</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+	    <groupId>aws.pa.client.rest</groupId>
+	    <artifactId>aws-pa-client-rest</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	
+	  
+    <dependency>
+	    <groupId>javax.ejb</groupId>
+	    <artifactId>ejb</artifactId>
+	    <version>3.0</version>
+    	<scope>provided</scope>
+	</dependency>
+	 
+	 
+	<dependency>
+		<groupId>javax.ejb</groupId>
+		<artifactId>ejb-api</artifactId>
+		<version>3.0</version>
+	</dependency>
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>persistence-api</artifactId>
+    <version>1.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-api</artifactId>
+    <version>6.0</version>
+</dependency>
+  </dependencies>
+  
+</project>
