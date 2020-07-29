@@ -1,7 +1,4 @@
-### STS ###
-target/
+/target/
+/bin/
+/build/
 
-### IntelliJ IDEA ###
-
-
-### NetBeans ###
