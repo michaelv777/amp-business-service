@@ -35,12 +35,10 @@ configurations.all {
 
 evaluationDependsOn(':amp-jpa-entities')
 evaluationDependsOn(':aws-pa-client-rest')
-evaluationDependsOn(':amp-common-api')
 evaluationDependsOn(':amp-data-handler')
 
 dependencies {
     compile group: 'amp.service.common', name: 'amp-jpa-entities', version:'0.0.1-SNAPSHOT'
-    compile group: 'amp.service.common', name: 'amp-common-api', version:'0.0.1-SNAPSHOT'
     compile group: 'amp.service.common', name: 'amp-data-handler', version:'0.0.1-SNAPSHOT'
     compile group: 'amp.service.common', name: 'aws-pa-client-rest', version:'0.0.1-SNAPSHOT'
     
